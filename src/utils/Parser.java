@@ -42,10 +42,10 @@ public class Parser {
                 default -> throw new WrongModeException("Wrong mode");
             };
             case 2 -> switch (flags.get(0) + flags.get(1)) {
-                case "-i-a" -> INT_ASC;
-                case "-i-d" -> INT_DESC;
-                case "-s-a" -> STRING_ASC;
-                case "-s-d" -> STRING_DESC;
+                case "-i-a", "-a-i" -> INT_ASC;
+                case "-i-d", "-d-i" -> INT_DESC;
+                case "-s-a", "-a-s" -> STRING_ASC;
+                case "-s-d", "-d-s" -> STRING_DESC;
                 default -> throw new WrongModeException("Wrong mode");
             };
             default -> throw new WrongModeException("Wrong mode");
